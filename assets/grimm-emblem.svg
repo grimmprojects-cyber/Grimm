@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="GRIMM emblem">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#1a1b1d"/>
+      <stop offset="100%" stop-color="#111214"/>
+    </radialGradient>
+    <linearGradient id="ring" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#f7555b"/>
+      <stop offset="100%" stop-color="#d61d27"/>
+    </linearGradient>
+  </defs>
+  <circle cx="400" cy="400" r="310" fill="url(#bg)"/>
+  <circle cx="400" cy="400" r="286" fill="none" stroke="url(#ring)" stroke-width="26"/>
+  <circle cx="400" cy="400" r="214" fill="none" stroke="#f3f0e9" stroke-width="14" opacity="0.9"/>
+  <path d="M 555 170 A 250 250 0 1 0 555 630" fill="none" stroke="#f3f0e9" stroke-width="42" stroke-linecap="round"/>
+  <path d="M 520 400 H 390" fill="none" stroke="#f3f0e9" stroke-width="42" stroke-linecap="round"/>
+  <path d="M 390 400 V 290 H 520" fill="none" stroke="#f3f0e9" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="400" cy="400" r="16" fill="#e12b30"/>
+</svg>
