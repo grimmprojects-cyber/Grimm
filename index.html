@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#111214">
   <meta name="description" content="GRIMM General Renovation, Innovation, Maintenance & Management. Quality work. Lasting results. Contact Calvin Duarte in Cape Town for your project.">
   <title>GRIMM | Quality Work. Lasting Results.</title>
-  <link rel="icon" href="assets/grimm-emblem.jpg" type="image/jpeg">
+  <link rel="icon" href="assets/grimm-emblem.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
     .navlinks { display:flex; align-items:center; gap:31px; color:#d2d0cc; font-size:13px; }
     .mobile-menu { display:none; }
     .navlinks a:hover { color:white; }
-    .button { display:inline-flex; min-height:48px; align-items:center; justify-content:center; padding:0 22px; background:var(--red); color:white; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; transition:transform .2s,background .2s; }
+    .button { display:inline-flex; min-height:48px; align-items:center; justify-content:center; padding:0 22px; background:var(--red); color:white; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; cursor:pointer; transition:all .3s; border:none; }
     .button:hover { transform:translateY(-2px); background:#f03b40; }
     .button.outline { background:transparent; border:1px solid #777; }
     .button.outline:hover { border-color:white; }
@@ -33,7 +33,7 @@
     .hero:before { content:''; position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,rgba(5,6,7,.92),rgba(9,10,11,.68) 48%,rgba(5,6,7,.92)),radial-gradient(ellipse at 50% 42%,#363738 0,#171819 40%,#070809 78%); }
     .hero:after { content:''; position:absolute; z-index:-1; inset:18px; border:1px solid rgba(194,195,193,.17); background:repeating-linear-gradient(132deg,transparent 0 37px,rgba(255,255,255,.018) 38px,transparent 39px 76px); pointer-events:none; }
     .hero-content { width:100%; display:grid; grid-template-columns:1.05fr .8fr; align-items:center; gap:clamp(40px,7vw,92px); }
-    .hero-copy-block { min-width:0; }
+    .hero-copy-block { min-width:0; animation:copy-in .65s both; }
     .eyebrow { display:flex; align-items:center; gap:12px; margin:0 0 20px; color:#ee5559; text-transform:uppercase; letter-spacing:.2em; font-size:11px; font-weight:700; }
     .hero .eyebrow { justify-content:flex-start; }
     .eyebrow:before { content:''; width:28px; height:1px; background:var(--red); }
@@ -49,11 +49,10 @@
     .hero-art { position:relative; width:100%; height:560px; margin:0; border:1px solid rgba(255,255,255,.2); background:#252628; animation:portrait-in .8s .12s both; }
     .hero-art img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 22%; }
     .hero-art figcaption { position:absolute; right:16px; bottom:16px; padding:11px 15px; color:white; background:rgba(17,18,20,.86); border-left:2px solid var(--red); font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
-    .hero-copy-block { animation:copy-in .65s both; }
     @keyframes copy-in { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
     @keyframes portrait-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
     .ticker { border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#151619; }
-    .ticker-inner { min-height:75px; display:flex; align-items:center; justify-content:space-between; gap:20px; color:#d1cfcb; font:400 15px 'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.16em; }
+    .ticker-inner { min-height:75px; display:flex; align-items:center; justify-content:space-between; gap:20px; color:#d1cfcb; font:400 15px 'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.08em; flex-wrap:wrap; }
     .ticker b { color:var(--red); font-size:20px; }
     section { padding:105px 0; }
     .section-head { max-width:650px; margin-bottom:48px; }
@@ -68,6 +67,24 @@
     .service-number { color:#b91e24; font:500 13px 'Oswald',sans-serif; letter-spacing:.12em; }
     .service h3 { margin:30px 0 10px; font-size:25px; text-transform:uppercase; }
     .service p { margin:0; color:#66625c; font-size:13px; }
+    .gallery { background:var(--ink); padding:105px 0; }
+    .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .gallery-item { aspect-ratio:4/3; overflow:hidden; border:1px solid var(--line); cursor:pointer; position:relative; }
+    .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
+    .gallery-item:hover img { transform:scale(1.05); }
+    .gallery-item-overlay { position:absolute; inset:0; background:rgba(0,0,0,.5); display:flex; align-items:flex-end; padding:20px; opacity:0; transition:opacity .3s; }
+    .gallery-item:hover .gallery-item-overlay { opacity:1; }
+    .gallery-item-title { color:white; font:500 14px 'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.08em; }
+    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.95); z-index:10; align-items:center; justify-content:center; }
+    .lightbox.active { display:flex; }
+    .lightbox-content { position:relative; max-width:90vw; max-height:90vh; }
+    .lightbox img { width:100%; height:100%; object-fit:contain; }
+    .lightbox-close { position:absolute; top:20px; right:20px; width:40px; height:40px; background:rgba(255,255,255,.2); color:white; font-size:28px; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:2px; transition:background .2s; }
+    .lightbox-close:hover { background:rgba(255,255,255,.3); }
+    .lightbox-nav { position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; background:rgba(255,255,255,.2); color:white; font-size:24px; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:2px; transition:background .2s; }
+    .lightbox-nav:hover { background:rgba(255,255,255,.3); }
+    .lightbox-prev { left:20px; }
+    .lightbox-next { right:20px; }
     .about-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:70px; align-items:center; }
     .about-photo { position:relative; margin:0; min-height:455px; border:1px solid var(--line); background:#111214; overflow:hidden; }
     .about-photo img { display:block; width:100%; height:100%; min-height:455px; object-fit:cover; object-position:center top; }
@@ -90,8 +107,47 @@
     footer { padding:24px 0; color:#858480; font-size:11px; }
     .footer-inner { display:flex; justify-content:space-between; gap:20px; }
     .footer-inner span:last-child { text-transform:uppercase; letter-spacing:.12em; }
-    @media(max-width:900px) { .hero-content { grid-template-columns:1fr .78fr; gap:36px; } h1 { font-size:62px; } .hero-art { height:490px; } .about-grid { gap:40px; } .about-card strong { font-size:44px; } }
-    @media(max-width:700px) { .wrap { width:min(100% - 34px,1160px); } nav { min-height:70px; } .navlinks > a:not(.button),.navlinks > .button { display:none; } .navlinks { gap:0; } .mobile-menu { display:block; position:relative; color:white; } .mobile-menu summary { min-height:42px; display:flex; align-items:center; gap:9px; padding:0 13px; border:1px solid #555; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; list-style:none; } .mobile-menu summary::-webkit-details-marker { display:none; } .mobile-menu summary:before { content:''; width:14px; height:10px; border-top:2px solid white; border-bottom:2px solid white; box-shadow:0 3px 0 -1px white; } .mobile-menu-panel { position:absolute; z-index:6; top:calc(100% + 10px); right:0; width:220px; display:grid; gap:2px; padding:8px; background:#202124; border:1px solid #3a3b3e; box-shadow:0 14px 32px rgba(0,0,0,.35); } .mobile-menu-panel a { display:block; padding:12px; font-size:13px; } .mobile-menu-panel a:hover { background:#303135; } .mobile-menu-panel .button { display:flex; margin-top:5px; } .brand { font-size:21px; } .brand-mark { width:36px; height:36px; } .hero { min-height:0; padding:54px 0 56px; } .hero-content { grid-template-columns:1fr; gap:35px; } h1 { font-size:54px; } .hero-art { width:min(100%,430px); height:440px; } .hero-copy { font-size:15px; } .proof { gap:15px; } .ticker-inner { justify-content:center; flex-wrap:wrap; padding:20px 0; font-size:12px; } .ticker-inner span:nth-of-type(2),.ticker-inner b:nth-of-type(2) { display:none; } section { padding:74px 0; } .section-head { margin-bottom:30px; } h2 { font-size:44px; } .service-grid { grid-template-columns:1fr 1fr; } .service { min-height:205px; padding:19px 15px; } .service h3 { font-size:21px; } .about-grid,.contact-grid { grid-template-columns:1fr; gap:32px; } .about-card { min-height:280px; } .about-card strong { font-size:36px; } .contact-box { padding:25px; } .footer-inner { flex-direction:column; gap:6px; } }
+    @media(max-width:900px) {
+      .hero-content { grid-template-columns:1fr .78fr; gap:36px; }
+      h1 { font-size:62px; }
+      .hero-art { height:490px; }
+      .about-grid { gap:40px; }
+      .service-grid { grid-template-columns:repeat(2,1fr); }
+      .gallery-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:700px) {
+      .wrap { width:min(100% - 34px,1160px); }
+      nav { min-height:70px; }
+      .navlinks > a:not(.button), .navlinks > .button { display:none; }
+      .navlinks { gap:0; }
+      .mobile-menu { display:block; position:relative; color:white; }
+      .mobile-menu summary { min-height:42px; display:flex; align-items:center; gap:9px; padding:0 13px; border:1px solid #555; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; list-style:none; }
+      .mobile-menu summary::-webkit-details-marker { display:none; }
+      .mobile-menu summary:before { content:''; width:14px; height:10px; border-top:2px solid white; border-bottom:2px solid white; box-shadow:0 3px 0 -1px white; }
+      .mobile-menu-panel { position:absolute; z-index:6; top:calc(100% + 10px); right:0; width:220px; display:grid; gap:2px; padding:8px; background:#202124; border:1px solid #3a3b3e; box-shadow:0 14px 32px rgba(0,0,0,.35); }
+      .mobile-menu-panel a { display:block; padding:12px; font-size:13px; }
+      .mobile-menu-panel a:hover { background:#303135; }
+      .mobile-menu-panel .button { display:flex; margin-top:5px; }
+      .brand { font-size:21px; }
+      .brand-mark { width:36px; height:36px; }
+      .hero { min-height:0; padding:54px 0 56px; }
+      .hero-content { grid-template-columns:1fr; gap:35px; }
+      h1 { font-size:54px; }
+      .hero-art { width:min(100%,430px); height:440px; }
+      .hero-copy { font-size:15px; }
+      .proof { gap:15px; }
+      .ticker-inner { justify-content:center; padding:20px 0; font-size:12px; }
+      .ticker-inner span:nth-of-type(2), .ticker-inner b:nth-of-type(2) { display:none; }
+      section, .gallery { padding:74px 0; }
+      .section-head { margin-bottom:30px; }
+      h2 { font-size:44px; }
+      .service { min-height:205px; padding:19px 15px; }
+      .service h3 { font-size:21px; }
+      .gallery-grid { grid-template-columns:1fr; }
+      .about-grid, .contact-grid { grid-template-columns:1fr; gap:32px; }
+      .contact-box { padding:25px; }
+      .footer-inner { flex-direction:column; gap:6px; }
+    }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*:before,*:after { transition:none!important; animation:none!important; } }
   </style>
 </head>
@@ -99,24 +155,30 @@
   <div class="topline"></div>
   <header>
     <nav class="wrap" aria-label="Main navigation">
-      <a class="brand" href="#top" aria-label="GRIMM home"><img class="brand-mark" src="assets/grimm-emblem.jpg" alt="GRIMM emblem"><span>GRIMM</span></a>
-      <div class="navlinks"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Start a project</a><details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Start a project</a></div></details></div>
+      <a class="brand" href="#top" aria-label="GRIMM home"><img class="brand-mark" src="assets/grimm-emblem.svg" alt=""><span>GRIMM</span></a>
+      <div class="navlinks">
+        <a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Start a project</a>
+        <details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#about">About</a><a href="#contact">Contact</a><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Start a project</a></div></details>
+      </div>
     </nav>
   </header>
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div class="wrap hero-content">
-        <div class="hero-copy-block"><p class="eyebrow">Cape Town · General Contracting</p>
-        <h1 id="hero-title">Built with care.<br><span>Made to last.</span></h1>
-        <p class="hero-copy">From renovations and repairs to ongoing property maintenance, GRIMM brings experienced hands and thoughtful project management to every job.</p>
-        <div class="hero-actions"><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Email GRIMM <span aria-hidden="true">&nbsp;↗</span></a><a class="button outline" href="tel:+27670075268">Call 067 007 5268</a></div>
-        <div class="proof"><strong>20+</strong><span>years of<br>experience</span><i class="proof-divider"></i><span>Quality work<br>lasting results</span></div></div>
+        <div class="hero-copy-block">
+          <p class="eyebrow">Cape Town · General Contracting</p>
+          <h1 id="hero-title">Built with care.<br><span>Made to last.</span></h1>
+          <p class="hero-copy">From renovations and repairs to ongoing property maintenance, GRIMM brings experienced hands and thoughtful project management to every job.</p>
+          <div class="hero-actions"><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Email GRIMM <span aria-hidden="true">↗</span></a><a class="button outline" href="tel:+27670075268">Call 067 007 5268</a></div>
+          <div class="proof"><strong>20+</strong><span>years of<br>experience</span><i class="proof-divider"></i><span>Quality work<br>lasting results</span></div>
+        </div>
         <figure class="hero-art"><img src="assets/calvin-duarte.jpg" alt="Calvin Duarte, owner and operator of GRIMM"><figcaption>Calvin Duarte · Owner / Operator</figcaption></figure>
       </div>
     </section>
     <div class="ticker"><div class="wrap ticker-inner"><span>General Renovation</span><b>•</b><span>Innovation</span><b>•</b><span>Maintenance</span><b>•</b><span>Management</span></div></div>
     <section class="services" id="services"><div class="wrap">
-      <div class="section-head"><p class="eyebrow">What we do</p><h2>One trusted team.<br>From start to finish.</h2><p>Practical contracting support for the work that keeps your home or property in good shape. Tell us what you have in mind and we’ll talk through the next steps.</p></div>
+      <div class="section-head"><p class="eyebrow">What we do</p><h2>One trusted team.<br>From start to finish.</h2><p>Practical contracting support for the work that keeps your home or property functional, comfortable, and well-maintained.</p></div>
       <div class="service-grid">
         <article class="service"><span class="service-number">01 / RENOVATE</span><h3>General renovation</h3><p>Refresh, repair, and improve the spaces you live and work in.</p></article>
         <article class="service"><span class="service-number">02 / IMPROVE</span><h3>Project upgrades</h3><p>Thoughtful improvements planned around your goals and property.</p></article>
@@ -124,21 +186,73 @@
         <article class="service"><span class="service-number">04 / MANAGE</span><h3>Project management</h3><p>Clear coordination and communication from planning to completion.</p></article>
       </div>
     </div></section>
+    <section class="gallery" id="portfolio"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">Recent work</p><h2>Projects we're<br>proud of.</h2><p>A selection of GRIMM renovation, roofing, and custom interior work.</p></div>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox(0)"><img src="assets/gallery/project-fireplace.jpg" alt="Fireplace renovation with tile finishing" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Fireplace Renovation</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(1)"><img src="assets/gallery/project-beams.jpg" alt="Ceiling renovation with exposed beams" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Ceiling Renovation</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(2)"><img src="assets/gallery/project-entertainment.jpg" alt="Custom entertainment center with cabinetry" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Custom Cabinetry</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(3)"><img src="assets/gallery/project-bedroom.jpg" alt="Bedroom renovation" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Bedroom Renovation</span></div></div>
+      </div>
+    </div></section>
     <section id="about"><div class="wrap about-grid">
-      <figure class="about-photo"><img src="assets/calvin-duarte.jpg" alt="Calvin Duarte, owner and operator of GRIMM"><figcaption>Calvin Duarte <span>Owner / Operator</span></figcaption></figure>
+      <figure class="about-photo"><img src="assets/calvin-duarte.jpg" alt="Calvin Duarte, owner and operator of GRIMM" loading="lazy"><figcaption>Calvin Duarte <span>Owner / Operator</span></figcaption></figure>
       <div class="about-copy"><p class="eyebrow">About GRIMM</p><h2>Good work starts with good people.</h2><p>GRIMM is a Cape Town contracting business led by Calvin Duarte. With more than 20 years of experience, Calvin brings a hands-on approach to renovation, maintenance, and project coordination.</p><p>We believe in doing the job with care, keeping communication straightforward, and leaving you with results you can feel good about.</p><p class="signature">Calvin Duarte</p><p class="role">Owner / Operator</p></div>
     </div></section>
     <section class="contact" id="contact"><div class="wrap contact-grid">
-      <div><p class="eyebrow">Let’s talk</p><h2>Have a project<br>in mind?</h2><p class="muted">Share a few details and Calvin will be in touch to discuss your project.</p>
+      <div><p class="eyebrow">Let's talk</p><h2>Have a project<br>in mind?</h2><p class="muted">Share a few details and Calvin will be in touch to discuss your project.</p>
         <div class="contact-info">
           <div class="contact-item"><span class="contact-icon" aria-hidden="true">✉</span><div><small>Email</small><a href="mailto:grimmprojectsco@gmail.com">grimmprojectsco@gmail.com</a></div></div>
           <div class="contact-item"><span class="contact-icon" aria-hidden="true">☎</span><div><small>Call</small><a href="tel:+27670075268">067 007 5268</a></div></div>
           <div class="contact-item"><span class="contact-icon" aria-hidden="true">⌖</span><div><small>Based in</small><span>Cape Town, South Africa</span></div></div>
         </div>
       </div>
-      <div class="contact-box"><h3>Start with a message.</h3><p>Let us know what you’re looking to renovate, repair, or maintain. We’ll get back to you to talk through the details.</p><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=GRIMM%20project%20enquiry&body=Hi%20Calvin%2C%0A%0AI%E2%80%99d%20like%20to%20discuss%20a%20project.%0A%0AProject%20location%3A%0AProject%20details%3A%0APreferred%20timeframe%3A%0A%0AThanks">Email GRIMM <span aria-hidden="true">&nbsp;↗</span></a><a class="button outline" href="tel:+27670075268">Call 067 007 5268</a></div>
+      <div class="contact-box"><h3>Start with a message.</h3><p>Let us know what you're looking to renovate, repair, or maintain. We'll get back to you to talk through the details.</p><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Send us a message</a></div>
     </div></section>
   </main>
   <footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> GRIMM Contracting · Cape Town</span><span>Quality work · Lasting results</span></div></footer>
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Project photo viewer">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo viewer">&times;</button>
+    <div class="lightbox-content"><img id="lightbox-image" src="" alt="Project photograph"></div>
+    <button class="lightbox-nav lightbox-prev" onclick="previousImage()" aria-label="Previous photo">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" onclick="nextImage()" aria-label="Next photo">&#10095;</button>
+  </div>
+  <script>
+    const galleryImages = [
+      'assets/gallery/project-fireplace.jpg',
+      'assets/gallery/project-beams.jpg',
+      'assets/gallery/project-entertainment.jpg',
+      'assets/gallery/project-bedroom.jpg'
+    ];
+    let currentImageIndex = 0;
+    function openLightbox(index) {
+      currentImageIndex = index;
+      document.getElementById('lightbox-image').src = galleryImages[index];
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
+    }
+    function previousImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') previousImage();
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 </body>
 </html>
