@@ -103,7 +103,18 @@
     .contact-box { padding:34px; background:#222326; border:1px solid #393a3d; }
     .contact-box h3 { font-size:27px; text-transform:uppercase; }
     .contact-box p { color:#b6b4b0; font-size:14px; }
-    .contact-box .button { width:100%; margin-top:14px; }
+    .enquiry-form { display:grid; gap:16px; margin-top:24px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .enquiry-form label, .services-label { color:#d9d7d2; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .enquiry-form input, .enquiry-form textarea { width:100%; margin-top:7px; padding:12px; color:var(--paper); background:#18191c; border:1px solid #4a4b4e; border-radius:2px; font:inherit; font-size:14px; }
+    .enquiry-form input:focus, .enquiry-form textarea:focus { outline:1px solid var(--red); border-color:var(--red); }
+    .enquiry-form textarea { min-height:125px; resize:vertical; }
+    .service-options { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+    .service-option { display:flex; align-items:center; gap:8px; color:#b6b4b0; font-size:13px; text-transform:none; letter-spacing:0; font-weight:400; }
+    .service-option input { width:auto; margin:0; accent-color:var(--red); }
+    .form-status { display:none; margin:0; color:#f0c5c5; font-size:13px; }
+    .form-status.visible { display:block; }
+    .contact-box .button { width:100%; margin-top:2px; }
     footer { padding:24px 0; color:#858480; font-size:11px; }
     .footer-inner { display:flex; justify-content:space-between; gap:20px; }
     .footer-inner span:last-child { text-transform:uppercase; letter-spacing:.12em; }
@@ -211,7 +222,30 @@
           <div class="contact-item"><span class="contact-icon" aria-hidden="true">⌖</span><div><small>Based in</small><span>Cape Town, South Africa</span></div></div>
         </div>
       </div>
-      <div class="contact-box"><h3>Start with a message.</h3><p>Let us know what you're looking to renovate, repair, or maintain. We'll get back to you to talk through the details.</p><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Send us a message</a></div>
+      <div class="contact-box"><h3>Start with a message.</h3><p>Complete the details below. Your email app will open a draft for you to review and send.</p>
+        <form class="enquiry-form" id="enquiry-form">
+          <div class="form-row">
+            <label>Name<input name="Client name" type="text" autocomplete="name" required></label>
+            <label>Email<input name="Email" type="email" autocomplete="email" required></label>
+          </div>
+          <div class="form-row">
+            <label>Phone<input name="Phone" type="tel" autocomplete="tel"></label>
+            <label>Property location<input name="Property location" type="text" autocomplete="address-level2"></label>
+          </div>
+          <fieldset>
+            <legend class="services-label">Services needed</legend>
+            <div class="service-options">
+              <label class="service-option"><input name="Services" value="General renovation" type="checkbox"> General renovation</label>
+              <label class="service-option"><input name="Services" value="Project upgrades" type="checkbox"> Project upgrades</label>
+              <label class="service-option"><input name="Services" value="Property maintenance" type="checkbox"> Property maintenance</label>
+              <label class="service-option"><input name="Services" value="Project management" type="checkbox"> Project management</label>
+            </div>
+          </fieldset>
+          <label>Project description<textarea name="Project description" required></textarea></label>
+          <button class="button" type="submit">Open email draft</button>
+          <p class="form-status" id="form-status" role="status">Your email app could not be opened. Please email <a href="mailto:grimmprojectsco@gmail.com">grimmprojectsco@gmail.com</a> directly.</p>
+        </form>
+      </div>
     </div></section>
   </main>
   <footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> GRIMM Contracting · Cape Town</span><span>Quality work · Lasting results</span></div></footer>
@@ -252,6 +286,35 @@
       document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
     }
     document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('enquiry-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const clientName = formData.get('Client name').trim();
+      const details = [];
+      for (const [field, value] of formData.entries()) {
+        if (field === 'Client name' || !value.trim()) continue;
+        if (field === 'Services') {
+          const existingServices = details.find(detail => detail.startsWith('Services:'));
+          if (existingServices) {
+            details[details.indexOf(existingServices)] += `, ${value.trim()}`;
+          } else {
+            details.push(`Services: ${value.trim()}`);
+          }
+        } else {
+          details.push(`${field}:\n${value.trim()}`);
+        }
+      }
+      const subject = `New Project Enquiry – ${clientName}`;
+      const mailto = `mailto:grimmprojectsco@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Client name: ${clientName}\n\n${details.join('\n\n')}`)}`;
+      const status = document.getElementById('form-status');
+      status.classList.remove('visible');
+      let emailAppOpened = false;
+      window.addEventListener('blur', () => { emailAppOpened = true; }, { once:true });
+      window.location.href = mailto;
+      window.setTimeout(() => {
+        if (!emailAppOpened) status.classList.add('visible');
+      }, 1200);
+    });
     document.getElementById('lightbox').addEventListener('click', function(e) {
       if (e.target === this) closeLightbox();
     });
