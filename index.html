@@ -89,6 +89,17 @@
     .lightbox-prev { left:20px; }
     .lightbox-next { right:20px; }
 
+    .process { background:#f3f0e9; color:#111214; }
+    .process .eyebrow { color:#b41e24; }
+    .process .section-head p { color:#5d5b57; }
+    .process-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); border-top:1px solid #c7c2b9; border-left:1px solid #c7c2b9; }
+    .process-step { min-height:250px; padding:22px 18px; border-right:1px solid #c7c2b9; border-bottom:1px solid #c7c2b9; position:relative; }
+    .process-skull { display:grid; place-items:center; width:36px; height:36px; margin-bottom:20px; border-radius:50%; background:#111214; color:#f3f0e9; font-size:20px; box-shadow:0 0 0 3px #f3f0e9,0 0 0 4px #c7c2b9; }
+    .process-step small { color:#b41e24; font:500 12px 'Oswald',sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+    .process-step h3 { margin:14px 0 9px; font-size:22px; text-transform:uppercase; }
+    .process-step p { margin:0; color:#5d5b57; font-size:13px; }
+    @media(max-width:900px) { .process-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:700px) { .process-grid { grid-template-columns:1fr; }.process-step { min-height:0; padding:20px 17px; } }
     .new-projects { background:#151619; border-top:1px solid var(--line); }
     .new-projects .eyebrow { color:#ee5559; }
     .new-project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; }
@@ -192,8 +203,8 @@
     <nav class="wrap" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="GRIMM home"><img class="brand-mark" src="assets/grimm-emblem.svg" alt=""><span>GRIMM</span></a>
       <div class="navlinks">
-        <a href="#services">Services</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
-        <details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="#services">Services</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div></details>
+        <a href="#services">Services</a><a href="#process">Our Process</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="#services">Services</a><a href="#process">Our Process</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div></details>
       </div>
     </nav>
   </header>
@@ -218,6 +229,16 @@
         <article class="service"><span class="service-number">02 / IMPROVE</span><h3>Project upgrades</h3><p>Thoughtful improvements planned around your goals and property.</p></article>
         <article class="service"><span class="service-number">03 / MAINTAIN</span><h3>Property maintenance</h3><p>Reliable upkeep and repairs to help protect your investment.</p></article>
         <article class="service"><span class="service-number">04 / MANAGE</span><h3>Project management</h3><p>Clear coordination and communication from planning to completion.</p></article>
+      </div>
+    </div></section>
+    <section class="process" id="process"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">The GRIMM way</p><h2>Good work.<br>No guesswork.</h2><p>Clear steps, careful workmanship, and straightforward communication from the first conversation to the final walkthrough.</p></div>
+      <div class="process-grid">
+        <article class="process-step"><span class="process-skull" aria-hidden="true">☠</span><small>01 / Start</small><h3>Talk it through</h3><p>We listen to what you want to change, look at the space, and agree on a practical plan, timeline, and budget.</p></article>
+        <article class="process-step"><span class="process-skull" aria-hidden="true">☠</span><small>02 / Choose</small><h3>Pick the details</h3><p>We help you choose suitable materials and finishes, with clear options that fit the look and use of your space.</p></article>
+        <article class="process-step"><span class="process-skull" aria-hidden="true">☠</span><small>03 / Build</small><h3>Get it done right</h3><p>Our team gets to work with care and attention, coordinating the job and keeping you updated as it takes shape.</p></article>
+        <article class="process-step"><span class="process-skull" aria-hidden="true">☠</span><small>04 / Check</small><h3>Mind the finish</h3><p>We check the work as we go and take care over the details, so the finished result feels solid, tidy, and considered.</p></article>
+        <article class="process-step"><span class="process-skull" aria-hidden="true">☠</span><small>05 / Handover</small><h3>Walk it through</h3><p>At the end, we take you through the completed work, answer your questions, and make sure everything is ready to enjoy.</p></article>
       </div>
     </div></section>
     <section class="gallery" id="portfolio"><div class="wrap">
