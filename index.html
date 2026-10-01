@@ -128,6 +128,18 @@
     .about-copy p { color:#b8b6b2; }
     .about-copy .signature { color:#fff; font:italic 27px Georgia,serif; margin:24px 0 0; }
     .about-copy .role { color:#ed5559; font-size:10px; letter-spacing:.23em; text-transform:uppercase; }
+    .testimonials { background:#111214; border-top:1px solid #38393c; }
+    .testimonial-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .testimonial-card { position:relative; padding:27px; background:#1b1c1f; border:1px solid #55504d; box-shadow:inset 0 0 0 3px #191a1d,inset 0 0 0 4px rgba(225,43,48,.42); }
+    .testimonial-card:before { content:'☠'; position:absolute; top:14px; right:16px; display:grid; place-items:center; width:31px; height:31px; border:1px solid rgba(225,43,48,.55); border-radius:50%; color:#f3f0e9; font-size:17px; }
+    .testimonial-card blockquote { margin:0; padding-right:28px; color:#e2dfd9; font-size:15px; line-height:1.75; white-space:pre-line; }
+    .testimonial-card blockquote p:last-child { margin-bottom:0; }
+    .testimonial-card cite { display:block; margin-top:22px; color:#fff; font:500 18px 'Oswald',sans-serif; font-style:normal; text-transform:uppercase; letter-spacing:.04em; }
+    .testimonial-card cite span { display:block; margin-top:4px; color:#e76a6d; font:600 10px 'DM Sans',Arial,sans-serif; letter-spacing:.14em; }
+    .testimonial-card.wide { grid-column:1/-1; }
+    .testimonial-points { margin:15px 0 0; padding-left:20px; color:#e2dfd9; font-size:14px; }
+    .testimonial-points li { padding:3px 0 3px 4px; }
+    @media(max-width:700px) { .testimonial-grid { grid-template-columns:1fr; }.testimonial-card { padding:23px 19px; }.testimonial-card.wide { grid-column:auto; } }
     .contact { scroll-margin-top:100px; background:#18191c; border-top:1px solid #303134; }
     .contact-grid { display:grid; grid-template-columns:1fr .8fr; gap:70px; }
     .contact-info { display:grid; gap:20px; align-content:center; }
@@ -203,8 +215,8 @@
     <nav class="wrap" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="GRIMM home"><img class="brand-mark" src="assets/grimm-emblem.svg" alt=""><span>GRIMM</span></a>
       <div class="navlinks">
-        <a href="#services">Services</a><a href="#process">Our Process</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
-        <details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="#services">Services</a><a href="#process">Our Process</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div></details>
+        <a href="#services">Services</a><a href="#process">Our Process</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a>
+        <details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="#services">Services</a><a href="#process">Our Process</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a></div></details>
       </div>
     </nav>
   </header>
@@ -327,6 +339,37 @@
     <section id="about"><div class="wrap about-grid">
       <figure class="about-photo"><img src="assets/calvin-duarte.jpg" alt="Calvin Duarte, owner and operator of GRIMM" loading="lazy"><figcaption>Calvin Duarte <span>Owner / Operator</span></figcaption></figure>
       <div class="about-copy"><p class="eyebrow">About GRIMM</p><h2>Good work starts with good people.</h2><p>GRIMM is a Cape Town contracting business led by Calvin Duarte. With more than 20 years of experience, Calvin brings a hands-on approach to renovation, maintenance, and project coordination.</p><p>We believe in doing the job with care, keeping communication straightforward, and leaving you with results you can feel good about.</p><p class="signature">Calvin Duarte</p><p class="role">Owner / Operator</p></div>
+    </div></section>
+    <section class="testimonials" id="testimonials"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">Good words from good people</p><h2>Client<br>testimonials.</h2><p>Trust is built one project at a time. Here is what GRIMM clients have shared about working with Calvin.</p></div>
+      <div class="testimonial-grid">
+        <article class="testimonial-card">
+          <blockquote>“GRIMM completely transformed our living space with their exceptional renovation skills. We couldn't be happier with the results.”</blockquote>
+          <cite>Jessica Thompson<span>Homeowner</span></cite>
+        </article>
+        <article class="testimonial-card">
+          <blockquote>I am writing to wholeheartedly recommend Calvin Duarte for exceptional service. I have had the opportunity of having him working for me on more than 1 Occasion and I must admit that I'd have no hesitation of placing him as a reliable, honest and most importantly a totally committed business...a trait sadly missing from most of the businesses... BIG OR SMALL. I admire and appreciate the "extra mile" you go to satisfy the needs and wants of your customers... At this rate of commitment and dedication to please the customer, I'm sure you are heading for a long and successful venture. Well done.. Keep up the good work. Once again, thank you for your sacrifices and commitment. Just remember "all is not gold that glitters". Take each day and experience as it comes... YOU'LL HAVE MANY UPS AND DOWNS, BUT YOUR HONESTY SINCERETY AND DEDICATION WILL STAND YOU IN GOOD STEAD. Don't lose hope.</blockquote>
+          <cite>Waheedah Shamsodien<span>Satisfied client</span></cite>
+        </article>
+        <article class="testimonial-card wide">
+          <blockquote>The reasons why I recommend Mr. Calvin Duarte for his maintenance workmanship:</blockquote>
+          <ol class="testimonial-points">
+            <li>He's Honest.</li>
+            <li>You can trust him in your house.</li>
+            <li>He does exactly what you ask of him.</li>
+            <li>He's on time at work, 8am, he is punctual.</li>
+            <li>He gets on with his work for the day.</li>
+            <li>He's straight forward, you ask him a question, he gives a straight answer spontaneously.</li>
+            <li>He allows you to buy your own materials for the job. He gives you the list and he recommends places to purchase. He goes with you if you ask him.</li>
+            <li>He's not a sour lemon, his personality fills your home with sweetness.</li>
+            <li>His workmanship lm happy, a satisfied client.</li>
+            <li>I would recommend him without hesitation.</li>
+            <li>His user friendly, you can talk to him about suggestions, how you like it to be done.</li>
+          </ol>
+          <blockquote><p>I recommend Calvin without a second thought. I am a happy client.</p></blockquote>
+          <cite>Mrs. S. Moodley</cite>
+        </article>
+      </div>
     </div></section>
     <section class="contact" id="contact"><div class="wrap contact-grid">
       <div><p class="eyebrow">Let's talk</p><h2>Have a project<br>in mind?</h2><p class="muted">Share a few details and Calvin will be in touch to discuss your project.</p>
