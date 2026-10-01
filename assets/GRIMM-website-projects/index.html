@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111214">
+  <meta name="description" content="GRIMM General Renovation, Innovation, Maintenance & Management. Quality work. Lasting results. Contact Calvin Duarte in Cape Town for your project.">
+  <title>GRIMM | Quality Work. Lasting Results.</title>
+  <link rel="icon" href="assets/grimm-emblem.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#111214; --panel:#191a1d; --paper:#f3f0e9; --muted:#aaa9a6; --red:#e12b30; --line:#38393c; --steel:#c5c5c2; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--paper); background:var(--ink); font-family:'DM Sans',Arial,sans-serif; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { width:min(1160px, calc(100% - 48px)); margin:auto; }
+    .topline { height:5px; background:linear-gradient(90deg,var(--red) 0 19%,transparent 19% 100%); }
+    header { position:sticky; top:0; z-index:5; background:rgba(17,18,20,.94); backdrop-filter:blur(12px); border-bottom:1px solid rgba(255,255,255,.08); }
+    nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .brand { display:flex; align-items:center; gap:13px; font:600 25px 'Oswald',sans-serif; letter-spacing:.15em; }
+    .brand-mark { width:58px; height:58px; object-fit:contain; }
+    .navlinks { display:flex; align-items:center; gap:31px; color:#d2d0cc; font-size:13px; }
+    .mobile-menu { display:none; }
+    .navlinks a:hover { color:white; }
+    .button { display:inline-flex; min-height:48px; align-items:center; justify-content:center; padding:0 22px; background:var(--red); color:white; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; border-radius:2px; cursor:pointer; transition:all .3s; border:none; }
+    .button:hover { transform:translateY(-2px); background:#f03b40; }
+    .button.outline { background:transparent; border:1px solid #777; }
+    .button.outline:hover { border-color:white; }
+    .hero { min-height:min(790px,calc(100svh - 82px)); display:grid; align-items:center; padding:64px 0 72px; position:relative; overflow:hidden; isolation:isolate; background:#090a0b; }
+    .hero:before { content:''; position:absolute; z-index:-1; inset:0; background:linear-gradient(90deg,rgba(5,6,7,.92),rgba(9,10,11,.68) 48%,rgba(5,6,7,.92)),radial-gradient(ellipse at 50% 42%,#363738 0,#171819 40%,#070809 78%); }
+    .hero:after { content:''; position:absolute; z-index:-1; inset:18px; border:1px solid rgba(194,195,193,.17); background:repeating-linear-gradient(132deg,transparent 0 37px,rgba(255,255,255,.018) 38px,transparent 39px 76px); pointer-events:none; }
+    .hero-content { width:100%; display:grid; grid-template-columns:1.05fr .8fr; align-items:center; gap:clamp(40px,7vw,92px); }
+    .hero-copy-block { min-width:0; animation:copy-in .65s both; }
+    .eyebrow { display:flex; align-items:center; gap:12px; margin:0 0 20px; color:#ee5559; text-transform:uppercase; letter-spacing:.2em; font-size:11px; font-weight:700; }
+    .hero .eyebrow { justify-content:flex-start; }
+    .eyebrow:before { content:''; width:28px; height:1px; background:var(--red); }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2,h3 { font-family:'Oswald',Impact,sans-serif; font-weight:500; line-height:1.08; }
+    h1 { max-width:640px; margin:0 0 18px; font-size:76px; letter-spacing:.015em; text-transform:uppercase; }
+    h1 span { color:var(--steel); }
+    .hero-copy { max-width:500px; margin:0; color:#c1bfbb; font-size:16px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:13px; margin:30px 0 36px; }
+    .proof { display:flex; justify-content:flex-start; gap:22px; align-items:center; color:#b5b3af; font-size:12px; text-transform:uppercase; letter-spacing:.11em; }
+    .proof strong { color:white; font:500 32px 'Oswald',sans-serif; letter-spacing:0; }
+    .proof-divider { height:36px; width:1px; background:#555; }
+    .hero-art { position:relative; width:100%; height:560px; margin:0; border:1px solid rgba(255,255,255,.2); background:#252628; animation:portrait-in .8s .12s both; }
+    .hero-art img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 22%; }
+    .hero-art figcaption { position:absolute; right:16px; bottom:16px; padding:11px 15px; color:white; background:rgba(17,18,20,.86); border-left:2px solid var(--red); font-size:10px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; }
+    @keyframes copy-in { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes portrait-in { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+    .ticker { border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:#151619; }
+    .ticker-inner { min-height:75px; display:flex; align-items:center; justify-content:space-between; gap:20px; color:#d1cfcb; font:400 15px 'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.08em; flex-wrap:wrap; }
+    .ticker b { color:var(--red); font-size:20px; }
+    section { padding:105px 0; }
+    .section-head { max-width:650px; margin-bottom:48px; }
+    h2 { margin-bottom:18px; font-size:clamp(38px,5vw,58px); text-transform:uppercase; }
+    .section-head p, .muted { color:var(--muted); }
+    .services { background:var(--paper); color:var(--ink); }
+    .services .eyebrow { color:#b41e24; }
+    .services .section-head p { color:#5d5b57; }
+    .service-grid { display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid #c7c2b9; border-left:1px solid #c7c2b9; }
+    .service { min-height:225px; padding:27px 23px; border-right:1px solid #c7c2b9; border-bottom:1px solid #c7c2b9; transition:background .2s; }
+    .service:hover { background:#e8e4dc; }
+    .service-number { color:#b91e24; font:500 13px 'Oswald',sans-serif; letter-spacing:.12em; }
+    .service h3 { margin:30px 0 10px; font-size:25px; text-transform:uppercase; }
+    .service p { margin:0; color:#66625c; font-size:13px; }
+    .gallery { background:var(--ink); padding:105px 0; }
+    .gallery-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .gallery-item { aspect-ratio:4/3; overflow:hidden; border:1px solid var(--line); cursor:pointer; position:relative; }
+    .gallery-item img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .3s; }
+    .gallery-item:hover img { transform:scale(1.05); }
+    .gallery-item-overlay { position:absolute; inset:0; background:rgba(0,0,0,.5); display:flex; align-items:flex-end; padding:20px; opacity:0; transition:opacity .3s; }
+    .gallery-item:hover .gallery-item-overlay { opacity:1; }
+    .gallery-item-title { color:white; font:500 14px 'Oswald',sans-serif; text-transform:uppercase; letter-spacing:.08em; }
+    .gallery-project-note { max-width:720px; margin:30px 0 0 auto; padding:20px 0 0 22px; border-top:1px solid var(--line); border-left:2px solid var(--red); }
+    .gallery-project-note h3 { margin:0 0 8px; font-size:22px; text-transform:uppercase; }
+    .gallery-project-note p { margin:0; color:var(--muted); font-size:14px; }
+    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,.95); z-index:10; align-items:center; justify-content:center; }
+    .lightbox.active { display:flex; }
+    .lightbox-content { position:relative; max-width:90vw; max-height:90vh; }
+    .lightbox img { width:100%; height:100%; object-fit:contain; }
+    .lightbox-close { position:absolute; top:20px; right:20px; width:40px; height:40px; background:rgba(255,255,255,.2); color:white; font-size:28px; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:2px; transition:background .2s; }
+    .lightbox-close:hover { background:rgba(255,255,255,.3); }
+    .lightbox-nav { position:absolute; top:50%; transform:translateY(-50%); width:40px; height:40px; background:rgba(255,255,255,.2); color:white; font-size:24px; border:none; cursor:pointer; display:flex; align-items:center; justify-content:center; border-radius:2px; transition:background .2s; }
+    .lightbox-nav:hover { background:rgba(255,255,255,.3); }
+    .lightbox-prev { left:20px; }
+    .lightbox-next { right:20px; }
+
+    .new-projects { background:#151619; border-top:1px solid var(--line); }
+    .new-projects .eyebrow { color:#ee5559; }
+    .new-project-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px; }
+    .new-project-card { position:relative; min-width:0; padding:14px; overflow:hidden; background:linear-gradient(145deg,#222326,#17181a); border:1px solid #77716c; box-shadow:inset 0 0 0 3px #191a1d,inset 0 0 0 4px rgba(225,43,48,.55),0 12px 26px rgba(0,0,0,.18); }
+    .new-project-card:before,.new-project-card:after { content:'✦'; position:absolute; z-index:2; color:#f3d9d6; font-size:12px; text-shadow:0 0 8px rgba(225,43,48,.7); pointer-events:none; }
+    .new-project-card:before { top:8px; left:8px; }.new-project-card:after { top:8px; right:8px; }
+    .project-card-head { display:flex; align-items:flex-start; justify-content:space-between; gap:15px; padding:7px 3px 13px; }
+    .project-card-head h3 { margin:0; font-size:23px; text-transform:uppercase; }
+    .project-card-head p { margin:8px 0 0; color:#b9b7b3; font-size:13px; }
+    .reaper-badge { display:grid; place-items:center; flex:none; width:42px; height:42px; border:1px solid rgba(225,43,48,.55); border-radius:50%; background:#191a1d; font-size:23px; line-height:1; box-shadow:0 0 13px rgba(225,43,48,.17); }
+    .project-cover { display:block; width:100%; aspect-ratio:16/10; padding:0; overflow:hidden; border:1px solid #77716c; background:#101113; cursor:zoom-in; }
+    .project-cover img,.project-photo-grid img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .25s; }
+    .project-cover:hover img,.project-photo-grid button:hover img { transform:scale(1.035); }
+    .new-project-photos { margin-top:12px; }
+    .new-project-photos summary { width:max-content; max-width:100%; color:#f1d5d3; font-size:12px; font-weight:700; letter-spacing:.06em; cursor:pointer; }
+    .project-photo-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin-top:12px; }
+    .project-photo-grid button { aspect-ratio:1; padding:0; overflow:hidden; border:1px solid #77716c; background:#101113; cursor:zoom-in; }
+    .project-photo-grid button img { object-fit:cover; }
+    .project-card-count { color:#e76a6d; font:500 11px 'Oswald',sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+    @media(max-width:700px) { .new-project-grid { grid-template-columns:1fr; gap:20px; }.new-project-card { padding:12px; }.project-card-head h3 { font-size:21px; }.project-photo-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    .about-grid { display:grid; grid-template-columns:.9fr 1.1fr; gap:70px; align-items:center; }
+    .about-photo { position:relative; margin:0; min-height:455px; border:1px solid var(--line); background:#111214; overflow:hidden; }
+    .about-photo img { display:block; width:100%; height:100%; min-height:455px; object-fit:cover; object-position:center top; }
+    .about-photo figcaption { position:absolute; left:20px; right:20px; bottom:20px; display:flex; flex-direction:column; gap:4px; padding:14px 16px; background:rgba(17,18,20,.86); border-left:2px solid var(--red); color:#fff; font:500 12px 'Oswald',sans-serif; letter-spacing:.12em; text-transform:uppercase; }
+    .about-photo figcaption span { color:var(--steel); font-size:10px; letter-spacing:.18em; }
+    .about-copy p { color:#b8b6b2; }
+    .about-copy .signature { color:#fff; font:italic 27px Georgia,serif; margin:24px 0 0; }
+    .about-copy .role { color:#ed5559; font-size:10px; letter-spacing:.23em; text-transform:uppercase; }
+    .contact { scroll-margin-top:100px; background:#18191c; border-top:1px solid #303134; }
+    .contact-grid { display:grid; grid-template-columns:1fr .8fr; gap:70px; }
+    .contact-info { display:grid; gap:20px; align-content:center; }
+    .contact-item { display:flex; gap:15px; padding:19px 0; border-bottom:1px solid var(--line); }
+    .contact-icon { display:grid; place-items:center; width:42px; height:42px; flex:none; color:white; background:#292a2d; }
+    .contact-item small { display:block; margin-bottom:4px; color:var(--muted); font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
+    .contact-item a,.contact-item span { font-size:15px; }
+    .contact-box { padding:34px; background:#222326; border:1px solid #393a3d; }
+    .contact-box h3 { font-size:27px; text-transform:uppercase; }
+    .contact-box p { color:#b6b4b0; font-size:14px; }
+    .enquiry-form { display:grid; gap:16px; margin-top:24px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    .enquiry-form label, .services-label { color:#d9d7d2; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    .enquiry-form input, .enquiry-form textarea { width:100%; margin-top:7px; padding:12px; color:var(--paper); background:#18191c; border:1px solid #4a4b4e; border-radius:2px; font:inherit; font-size:14px; }
+    .enquiry-form input:focus, .enquiry-form textarea:focus { outline:1px solid var(--red); border-color:var(--red); }
+    .enquiry-form textarea { min-height:125px; resize:vertical; }
+    .service-options { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px; }
+    .service-option { display:flex; align-items:center; gap:8px; color:#b6b4b0; font-size:13px; text-transform:none; letter-spacing:0; font-weight:400; }
+    .service-option input { width:auto; margin:0; accent-color:var(--red); }
+    .form-status { display:none; margin:0; color:#f0c5c5; font-size:13px; }
+    .form-status.visible { display:block; }
+    .contact-box .button { width:100%; margin-top:2px; }
+    footer { padding:24px 0; color:#858480; font-size:11px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; }
+    .footer-inner span:last-child { text-transform:uppercase; letter-spacing:.12em; }
+    @media(max-width:900px) {
+      .hero-content { grid-template-columns:1fr .78fr; gap:36px; }
+      h1 { font-size:62px; }
+      .hero-art { height:490px; }
+      .about-grid { gap:40px; }
+      .service-grid { grid-template-columns:repeat(2,1fr); }
+      .gallery-grid { grid-template-columns:repeat(2,1fr); }
+    }
+    @media(max-width:700px) {
+      .wrap { width:min(100% - 34px,1160px); }
+      nav { min-height:70px; }
+      .navlinks > a:not(.button), .navlinks > .button { display:none; }
+      .navlinks { gap:0; }
+      .mobile-menu { display:block; position:relative; color:white; }
+      .mobile-menu summary { min-height:42px; display:flex; align-items:center; gap:9px; padding:0 13px; border:1px solid #555; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; list-style:none; }
+      .mobile-menu summary::-webkit-details-marker { display:none; }
+      .mobile-menu summary:before { content:''; width:14px; height:10px; border-top:2px solid white; border-bottom:2px solid white; box-shadow:0 3px 0 -1px white; }
+      .mobile-menu-panel { position:absolute; z-index:6; top:calc(100% + 10px); right:0; width:220px; display:grid; gap:2px; padding:8px; background:#202124; border:1px solid #3a3b3e; box-shadow:0 14px 32px rgba(0,0,0,.35); }
+      .mobile-menu-panel a { display:block; padding:12px; font-size:13px; }
+      .mobile-menu-panel a:hover { background:#303135; }
+      .mobile-menu-panel .button { display:flex; margin-top:5px; }
+      .brand { font-size:21px; }
+      .brand-mark { width:36px; height:36px; }
+      .hero { min-height:0; padding:54px 0 56px; }
+      .hero-content { grid-template-columns:1fr; gap:35px; }
+      h1 { font-size:54px; }
+      .hero-art { width:min(100%,430px); height:440px; }
+      .hero-copy { font-size:15px; }
+      .proof { gap:15px; }
+      .ticker-inner { justify-content:center; padding:20px 0; font-size:12px; }
+      .ticker-inner span:nth-of-type(2), .ticker-inner b:nth-of-type(2) { display:none; }
+      section, .gallery { padding:74px 0; }
+      .section-head { margin-bottom:30px; }
+      h2 { font-size:44px; }
+      .service { min-height:205px; padding:19px 15px; }
+      .service h3 { font-size:21px; }
+      .gallery-grid { grid-template-columns:1fr; }
+      .about-grid, .contact-grid { grid-template-columns:1fr; gap:32px; }
+      .contact-box { padding:25px; }
+      .footer-inner { flex-direction:column; gap:6px; }
+    }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*:before,*:after { transition:none!important; animation:none!important; } }
+  </style>
+</head>
+<body>
+  <div class="topline"></div>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="GRIMM home"><img class="brand-mark" src="assets/grimm-emblem.svg" alt=""><span>GRIMM</span></a>
+      <div class="navlinks">
+        <a href="#services">Services</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#contact">Contact</a>
+        <details class="mobile-menu"><summary>Menu</summary><div class="mobile-menu-panel"><a href="#services">Services</a><a href="#portfolio">Projects</a><a href="#new-projects">Recent Projects</a><a href="#about">About</a><a href="#contact">Contact</a></div></details>
+      </div>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-content">
+        <div class="hero-copy-block">
+          <p class="eyebrow">Cape Town · General Contracting</p>
+          <h1 id="hero-title">Built with care.<br><span>Made to last.</span></h1>
+          <p class="hero-copy">From renovations and repairs to ongoing property maintenance, GRIMM brings experienced hands and thoughtful project management to every job.</p>
+          <div class="hero-actions"><a class="button" href="mailto:grimmprojectsco@gmail.com?subject=Project%20enquiry">Email GRIMM <span aria-hidden="true">↗</span></a><a class="button outline" href="tel:+27670075268">Call 067 007 5268</a></div>
+          <div class="proof"><strong>20+</strong><span>years of<br>experience</span><i class="proof-divider"></i><span>Quality work<br>lasting results</span></div>
+        </div>
+        <figure class="hero-art"><img src="assets/calvin-duarte.jpg" alt="Calvin Duarte, owner and operator of GRIMM"><figcaption>Calvin Duarte · Owner / Operator</figcaption></figure>
+      </div>
+    </section>
+    <div class="ticker"><div class="wrap ticker-inner"><span>General Renovation</span><b>•</b><span>Innovation</span><b>•</b><span>Maintenance</span><b>•</b><span>Management</span></div></div>
+    <section class="services" id="services"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">What we do</p><h2>One trusted team.<br>From start to finish.</h2><p>Practical contracting support for the work that keeps your home or property functional, comfortable, and well-maintained.</p></div>
+      <div class="service-grid">
+        <article class="service"><span class="service-number">01 / RENOVATE</span><h3>General renovation</h3><p>Refresh, repair, and improve the spaces you live and work in.</p></article>
+        <article class="service"><span class="service-number">02 / IMPROVE</span><h3>Project upgrades</h3><p>Thoughtful improvements planned around your goals and property.</p></article>
+        <article class="service"><span class="service-number">03 / MAINTAIN</span><h3>Property maintenance</h3><p>Reliable upkeep and repairs to help protect your investment.</p></article>
+        <article class="service"><span class="service-number">04 / MANAGE</span><h3>Project management</h3><p>Clear coordination and communication from planning to completion.</p></article>
+      </div>
+    </div></section>
+    <section class="gallery" id="portfolio"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">Recent work</p><h2>Projects we're<br>proud of.</h2><p>A selection of GRIMM renovation, roofing, and custom interior work.</p></div>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openLightbox(0)"><img src="assets/ceiling beams.jpeg" alt="Ceiling beams installation" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Ceiling Beams</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(1)"><img src="assets/fireplace.jpeg" alt="Fireplace installation and finishing" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Fireplace</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(2)"><img src="assets/handbasin installation.jpeg" alt="Handbasin installation" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Handbasin</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(3)"><img src="assets/new tech drywall.jpeg" alt="New tech drywall installation" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">New Tech Drywall</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(4)"><img src="assets/partition.jpeg" alt="Partition wall installation" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Partition</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(5)"><img src="assets/reception window.jpeg" alt="Reception window installation" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Reception Window</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(6)"><img src="assets/tiling.jpeg" alt="Tiling project" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">Tiling</span></div></div>
+        <div class="gallery-item" onclick="openLightbox(7)"><img src="assets/tv unit.jpeg" alt="TV unit installation" loading="lazy"><div class="gallery-item-overlay"><span class="gallery-item-title">TV Unit</span></div></div>
+      </div></div></section>
+    <section class="new-projects" id="new-projects"><div class="wrap">
+      <div class="section-head"><p class="eyebrow">More recent work</p><h2>New projects<br>and fresh finishes.</h2><p>Browse more GRIMM projects, with every supplied project photo collected alongside its description.</p></div>
+      <div class="new-project-grid">
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Banister Rail Installation</h3><p>A clean, classic finish for this home’s entrance. Grimm installed a crisp white banister rail around the raised porch, adding a defined edge and a practical barrier while complementing the building’s exterior.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(8)" aria-label="View Banister Rail Installation photo"><img src="Banister rail/WhatsApp Image 2026-10-01 at 08.03.36.jpeg" alt="Banister Rail Installation" loading="lazy"></button>
+          <div class="project-card-count">2 photos</div>
+          <details class="new-project-photos"><summary>View all 2 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(9)" aria-label="View Banister Rail Installation photo 2"><img src="Banister rail/WhatsApp Image 2026-10-01 at 08.03.37.jpeg" alt="Banister Rail Installation — photo 2" loading="lazy"></button></div></details>
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Ceiling Installation</h3><p>Grimm installed ceiling boards to create a smooth, even surface and give the room a clean, finished look, ready for the final finishing touches.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(10)" aria-label="View Ceiling Installation photo"><img src="ceiling installation/WhatsApp Image 2026-10-01 at 08.25.20.jpeg" alt="Ceiling Installation" loading="lazy"></button>
+          <div class="project-card-count">4 photos</div>
+          <details class="new-project-photos"><summary>View all 4 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(11)" aria-label="View Ceiling Installation photo 2"><img src="ceiling installation/WhatsApp Image 2026-10-01 at 08.25.21 (1).jpeg" alt="Ceiling Installation — photo 2" loading="lazy"></button><button type="button" onclick="openLightbox(12)" aria-label="View Ceiling Installation photo 3"><img src="ceiling installation/WhatsApp Image 2026-10-01 at 08.25.21 (2).jpeg" alt="Ceiling Installation — photo 3" loading="lazy"></button><button type="button" onclick="openLightbox(13)" aria-label="View Ceiling Installation photo 4"><img src="ceiling installation/WhatsApp Image 2026-10-01 at 08.25.21.jpeg" alt="Ceiling Installation — photo 4" loading="lazy"></button></div></details>
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Kitchen Floor Tiling</h3><p>Contrasting floor tiles bring character to this kitchen while creating a practical, durable surface for everyday use.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(14)" aria-label="View Kitchen Floor Tiling photo"><img src="kitchen tiling/WhatsApp Image 2026-10-01 at 08.16.59.jpeg" alt="Kitchen Floor Tiling" loading="lazy"></button>
+          <div class="project-card-count">1 photo</div>
+          
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Newtech House Renovation</h3><p>A range of work at Newtech House included electrical and plumbing installations, tiling, drywalling and exterior structural work, helping move the home from its structural stages toward a functional living space.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(15)" aria-label="View Newtech House Renovation photo"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.53.jpeg" alt="Newtech House Renovation" loading="lazy"></button>
+          <div class="project-card-count">28 photos</div>
+          <details class="new-project-photos"><summary>View all 28 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(16)" aria-label="View Newtech House Renovation photo 2"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.54 (1).jpeg" alt="Newtech House Renovation — photo 2" loading="lazy"></button><button type="button" onclick="openLightbox(17)" aria-label="View Newtech House Renovation photo 3"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.54.jpeg" alt="Newtech House Renovation — photo 3" loading="lazy"></button><button type="button" onclick="openLightbox(18)" aria-label="View Newtech House Renovation photo 4"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.55 (1).jpeg" alt="Newtech House Renovation — photo 4" loading="lazy"></button><button type="button" onclick="openLightbox(19)" aria-label="View Newtech House Renovation photo 5"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.55.jpeg" alt="Newtech House Renovation — photo 5" loading="lazy"></button><button type="button" onclick="openLightbox(20)" aria-label="View Newtech House Renovation photo 6"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.57.jpeg" alt="Newtech House Renovation — photo 6" loading="lazy"></button><button type="button" onclick="openLightbox(21)" aria-label="View Newtech House Renovation photo 7"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.58 (1).jpeg" alt="Newtech House Renovation — photo 7" loading="lazy"></button><button type="button" onclick="openLightbox(22)" aria-label="View Newtech House Renovation photo 8"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.58.jpeg" alt="Newtech House Renovation — photo 8" loading="lazy"></button><button type="button" onclick="openLightbox(23)" aria-label="View Newtech House Renovation photo 9"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.00.jpeg" alt="Newtech House Renovation — photo 9" loading="lazy"></button><button type="button" onclick="openLightbox(24)" aria-label="View Newtech House Renovation photo 10"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.02 (1).jpeg" alt="Newtech House Renovation — photo 10" loading="lazy"></button><button type="button" onclick="openLightbox(25)" aria-label="View Newtech House Renovation photo 11"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.02 (2).jpeg" alt="Newtech House Renovation — photo 11" loading="lazy"></button><button type="button" onclick="openLightbox(26)" aria-label="View Newtech House Renovation photo 12"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.02.jpeg" alt="Newtech House Renovation — photo 12" loading="lazy"></button><button type="button" onclick="openLightbox(27)" aria-label="View Newtech House Renovation photo 13"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.03 (1).jpeg" alt="Newtech House Renovation — photo 13" loading="lazy"></button><button type="button" onclick="openLightbox(28)" aria-label="View Newtech House Renovation photo 14"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.03 (2).jpeg" alt="Newtech House Renovation — photo 14" loading="lazy"></button><button type="button" onclick="openLightbox(29)" aria-label="View Newtech House Renovation photo 15"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.03.jpeg" alt="Newtech House Renovation — photo 15" loading="lazy"></button><button type="button" onclick="openLightbox(30)" aria-label="View Newtech House Renovation photo 16"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.04 (1).jpeg" alt="Newtech House Renovation — photo 16" loading="lazy"></button><button type="button" onclick="openLightbox(31)" aria-label="View Newtech House Renovation photo 17"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.04.jpeg" alt="Newtech House Renovation — photo 17" loading="lazy"></button><button type="button" onclick="openLightbox(32)" aria-label="View Newtech House Renovation photo 18"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.05.jpeg" alt="Newtech House Renovation — photo 18" loading="lazy"></button><button type="button" onclick="openLightbox(33)" aria-label="View Newtech House Renovation photo 19"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.06.jpeg" alt="Newtech House Renovation — photo 19" loading="lazy"></button><button type="button" onclick="openLightbox(34)" aria-label="View Newtech House Renovation photo 20"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.07.jpeg" alt="Newtech House Renovation — photo 20" loading="lazy"></button><button type="button" onclick="openLightbox(35)" aria-label="View Newtech House Renovation photo 21"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.08.jpeg" alt="Newtech House Renovation — photo 21" loading="lazy"></button><button type="button" onclick="openLightbox(36)" aria-label="View Newtech House Renovation photo 22"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.09 (1).jpeg" alt="Newtech House Renovation — photo 22" loading="lazy"></button><button type="button" onclick="openLightbox(37)" aria-label="View Newtech House Renovation photo 23"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.09.jpeg" alt="Newtech House Renovation — photo 23" loading="lazy"></button><button type="button" onclick="openLightbox(38)" aria-label="View Newtech House Renovation photo 24"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.10 (1).jpeg" alt="Newtech House Renovation — photo 24" loading="lazy"></button><button type="button" onclick="openLightbox(39)" aria-label="View Newtech House Renovation photo 25"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.10.jpeg" alt="Newtech House Renovation — photo 25" loading="lazy"></button><button type="button" onclick="openLightbox(40)" aria-label="View Newtech House Renovation photo 26"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.11 (1).jpeg" alt="Newtech House Renovation — photo 26" loading="lazy"></button><button type="button" onclick="openLightbox(41)" aria-label="View Newtech House Renovation photo 27"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.11 (2).jpeg" alt="Newtech House Renovation — photo 27" loading="lazy"></button><button type="button" onclick="openLightbox(42)" aria-label="View Newtech House Renovation photo 28"><img src="newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.11.jpeg" alt="Newtech House Renovation — photo 28" loading="lazy"></button></div></details>
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Surgery Reception Desk and Signage</h3><p>Grimm built and installed a reception desk for a surgery, creating a practical first point of contact for visitors. Complementary wall signage gives the space a clear, professional identity.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(43)" aria-label="View Surgery Reception Desk and Signage photo"><img src="reception/WhatsApp Image 2026-10-01 at 08.12.39.jpeg" alt="Surgery Reception Desk and Signage" loading="lazy"></button>
+          <div class="project-card-count">7 photos</div>
+          <details class="new-project-photos"><summary>View all 7 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(44)" aria-label="View Surgery Reception Desk and Signage photo 2"><img src="reception/WhatsApp Image 2026-10-01 at 08.12.40 (1).jpeg" alt="Surgery Reception Desk and Signage — photo 2" loading="lazy"></button><button type="button" onclick="openLightbox(45)" aria-label="View Surgery Reception Desk and Signage photo 3"><img src="reception/WhatsApp Image 2026-10-01 at 08.12.40.jpeg" alt="Surgery Reception Desk and Signage — photo 3" loading="lazy"></button><button type="button" onclick="openLightbox(46)" aria-label="View Surgery Reception Desk and Signage photo 4"><img src="reception/WhatsApp Image 2026-10-01 at 08.12.41 (1).jpeg" alt="Surgery Reception Desk and Signage — photo 4" loading="lazy"></button><button type="button" onclick="openLightbox(47)" aria-label="View Surgery Reception Desk and Signage photo 5"><img src="reception/WhatsApp Image 2026-10-01 at 08.12.41 (2).jpeg" alt="Surgery Reception Desk and Signage — photo 5" loading="lazy"></button><button type="button" onclick="openLightbox(48)" aria-label="View Surgery Reception Desk and Signage photo 6"><img src="reception/WhatsApp Image 2026-10-01 at 08.12.41.jpeg" alt="Surgery Reception Desk and Signage — photo 6" loading="lazy"></button><button type="button" onclick="openLightbox(49)" aria-label="View Surgery Reception Desk and Signage photo 7"><img src="reception/WhatsApp Image 2026-10-01 at 08.12.42.jpeg" alt="Surgery Reception Desk and Signage — photo 7" loading="lazy"></button></div></details>
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Roof Cleaning and Waterproofing</h3><p>Grimm cleaned the roof and carried out waterproofing work to help protect the home from water ingress and keep the roof well maintained.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(50)" aria-label="View Roof Cleaning and Waterproofing photo"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.08.jpeg" alt="Roof Cleaning and Waterproofing" loading="lazy"></button>
+          <div class="project-card-count">33 photos</div>
+          <details class="new-project-photos"><summary>View all 33 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(51)" aria-label="View Roof Cleaning and Waterproofing photo 2"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.09 (1).jpeg" alt="Roof Cleaning and Waterproofing — photo 2" loading="lazy"></button><button type="button" onclick="openLightbox(52)" aria-label="View Roof Cleaning and Waterproofing photo 3"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.09 (2).jpeg" alt="Roof Cleaning and Waterproofing — photo 3" loading="lazy"></button><button type="button" onclick="openLightbox(53)" aria-label="View Roof Cleaning and Waterproofing photo 4"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.09 (3).jpeg" alt="Roof Cleaning and Waterproofing — photo 4" loading="lazy"></button><button type="button" onclick="openLightbox(54)" aria-label="View Roof Cleaning and Waterproofing photo 5"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.09.jpeg" alt="Roof Cleaning and Waterproofing — photo 5" loading="lazy"></button><button type="button" onclick="openLightbox(55)" aria-label="View Roof Cleaning and Waterproofing photo 6"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.10 (1).jpeg" alt="Roof Cleaning and Waterproofing — photo 6" loading="lazy"></button><button type="button" onclick="openLightbox(56)" aria-label="View Roof Cleaning and Waterproofing photo 7"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.10 (2).jpeg" alt="Roof Cleaning and Waterproofing — photo 7" loading="lazy"></button><button type="button" onclick="openLightbox(57)" aria-label="View Roof Cleaning and Waterproofing photo 8"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.10 (3).jpeg" alt="Roof Cleaning and Waterproofing — photo 8" loading="lazy"></button><button type="button" onclick="openLightbox(58)" aria-label="View Roof Cleaning and Waterproofing photo 9"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.10.jpeg" alt="Roof Cleaning and Waterproofing — photo 9" loading="lazy"></button><button type="button" onclick="openLightbox(59)" aria-label="View Roof Cleaning and Waterproofing photo 10"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.11 (1).jpeg" alt="Roof Cleaning and Waterproofing — photo 10" loading="lazy"></button><button type="button" onclick="openLightbox(60)" aria-label="View Roof Cleaning and Waterproofing photo 11"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.11 (2).jpeg" alt="Roof Cleaning and Waterproofing — photo 11" loading="lazy"></button><button type="button" onclick="openLightbox(61)" aria-label="View Roof Cleaning and Waterproofing photo 12"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.11.jpeg" alt="Roof Cleaning and Waterproofing — photo 12" loading="lazy"></button><button type="button" onclick="openLightbox(62)" aria-label="View Roof Cleaning and Waterproofing photo 13"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.12 (1).jpeg" alt="Roof Cleaning and Waterproofing — photo 13" loading="lazy"></button><button type="button" onclick="openLightbox(63)" aria-label="View Roof Cleaning and Waterproofing photo 14"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.12 (2).jpeg" alt="Roof Cleaning and Waterproofing — photo 14" loading="lazy"></button><button type="button" onclick="openLightbox(64)" aria-label="View Roof Cleaning and Waterproofing photo 15"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.12 (3).jpeg" alt="Roof Cleaning and Waterproofing — photo 15" loading="lazy"></button><button type="button" onclick="openLightbox(65)" aria-label="View Roof Cleaning and Waterproofing photo 16"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.12.jpeg" alt="Roof Cleaning and Waterproofing — photo 16" loading="lazy"></button><button type="button" onclick="openLightbox(66)" aria-label="View Roof Cleaning and Waterproofing photo 17"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.13 (1).jpeg" alt="Roof Cleaning and Waterproofing — photo 17" loading="lazy"></button><button type="button" onclick="openLightbox(67)" aria-label="View Roof Cleaning and Waterproofing photo 18"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.13 (2).jpeg" alt="Roof Cleaning and Waterproofing — photo 18" loading="lazy"></button><button type="button" onclick="openLightbox(68)" aria-label="View Roof Cleaning and Waterproofing photo 19"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.13 (3).jpeg" alt="Roof Cleaning and Waterproofing — photo 19" loading="lazy"></button><button type="button" onclick="openLightbox(69)" aria-label="View Roof Cleaning and Waterproofing photo 20"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.13.jpeg" alt="Roof Cleaning and Waterproofing — photo 20" loading="lazy"></button><button type="button" onclick="openLightbox(70)" aria-label="View Roof Cleaning and Waterproofing photo 21"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.14 (1).jpeg" alt="Roof Cleaning and Waterproofing — photo 21" loading="lazy"></button><button type="button" onclick="openLightbox(71)" aria-label="View Roof Cleaning and Waterproofing photo 22"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.14 (2).jpeg" alt="Roof Cleaning and Waterproofing — photo 22" loading="lazy"></button><button type="button" onclick="openLightbox(72)" aria-label="View Roof Cleaning and Waterproofing photo 23"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.14 (3).jpeg" alt="Roof Cleaning and Waterproofing — photo 23" loading="lazy"></button><button type="button" onclick="openLightbox(73)" aria-label="View Roof Cleaning and Waterproofing photo 24"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.14.jpeg" alt="Roof Cleaning and Waterproofing — photo 24" loading="lazy"></button><button type="button" onclick="openLightbox(74)" aria-label="View Roof Cleaning and Waterproofing photo 25"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.15 (1).jpeg" alt="Roof Cleaning and Waterproofing — photo 25" loading="lazy"></button><button type="button" onclick="openLightbox(75)" aria-label="View Roof Cleaning and Waterproofing photo 26"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.15 (2).jpeg" alt="Roof Cleaning and Waterproofing — photo 26" loading="lazy"></button><button type="button" onclick="openLightbox(76)" aria-label="View Roof Cleaning and Waterproofing photo 27"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.15 (3).jpeg" alt="Roof Cleaning and Waterproofing — photo 27" loading="lazy"></button><button type="button" onclick="openLightbox(77)" aria-label="View Roof Cleaning and Waterproofing photo 28"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.15.jpeg" alt="Roof Cleaning and Waterproofing — photo 28" loading="lazy"></button><button type="button" onclick="openLightbox(78)" aria-label="View Roof Cleaning and Waterproofing photo 29"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.16.jpeg" alt="Roof Cleaning and Waterproofing — photo 29" loading="lazy"></button><button type="button" onclick="openLightbox(79)" aria-label="View Roof Cleaning and Waterproofing photo 30"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.54 (1).jpeg" alt="Roof Cleaning and Waterproofing — photo 30" loading="lazy"></button><button type="button" onclick="openLightbox(80)" aria-label="View Roof Cleaning and Waterproofing photo 31"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.54 (2).jpeg" alt="Roof Cleaning and Waterproofing — photo 31" loading="lazy"></button><button type="button" onclick="openLightbox(81)" aria-label="View Roof Cleaning and Waterproofing photo 32"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.54.jpeg" alt="Roof Cleaning and Waterproofing — photo 32" loading="lazy"></button><button type="button" onclick="openLightbox(82)" aria-label="View Roof Cleaning and Waterproofing photo 33"><img src="roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.55.jpeg" alt="Roof Cleaning and Waterproofing — photo 33" loading="lazy"></button></div></details>
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Strandfontein High School Office Renovation</h3><p>Grimm reconfigured an office at Strandfontein High School with drywall partitions, formed and installed a new doorway, and closed the former doorway to create space for a reception window and desk.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(83)" aria-label="View Strandfontein High School Office Renovation photo"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.28 (1).jpeg" alt="Strandfontein High School Office Renovation" loading="lazy"></button>
+          <div class="project-card-count">24 photos</div>
+          <details class="new-project-photos"><summary>View all 24 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(84)" aria-label="View Strandfontein High School Office Renovation photo 2"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.28.jpeg" alt="Strandfontein High School Office Renovation — photo 2" loading="lazy"></button><button type="button" onclick="openLightbox(85)" aria-label="View Strandfontein High School Office Renovation photo 3"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.30.jpeg" alt="Strandfontein High School Office Renovation — photo 3" loading="lazy"></button><button type="button" onclick="openLightbox(86)" aria-label="View Strandfontein High School Office Renovation photo 4"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.31.jpeg" alt="Strandfontein High School Office Renovation — photo 4" loading="lazy"></button><button type="button" onclick="openLightbox(87)" aria-label="View Strandfontein High School Office Renovation photo 5"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.32 (1).jpeg" alt="Strandfontein High School Office Renovation — photo 5" loading="lazy"></button><button type="button" onclick="openLightbox(88)" aria-label="View Strandfontein High School Office Renovation photo 6"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.32.jpeg" alt="Strandfontein High School Office Renovation — photo 6" loading="lazy"></button><button type="button" onclick="openLightbox(89)" aria-label="View Strandfontein High School Office Renovation photo 7"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.33.jpeg" alt="Strandfontein High School Office Renovation — photo 7" loading="lazy"></button><button type="button" onclick="openLightbox(90)" aria-label="View Strandfontein High School Office Renovation photo 8"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.34.jpeg" alt="Strandfontein High School Office Renovation — photo 8" loading="lazy"></button><button type="button" onclick="openLightbox(91)" aria-label="View Strandfontein High School Office Renovation photo 9"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.35 (1).jpeg" alt="Strandfontein High School Office Renovation — photo 9" loading="lazy"></button><button type="button" onclick="openLightbox(92)" aria-label="View Strandfontein High School Office Renovation photo 10"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.35.jpeg" alt="Strandfontein High School Office Renovation — photo 10" loading="lazy"></button><button type="button" onclick="openLightbox(93)" aria-label="View Strandfontein High School Office Renovation photo 11"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.39 (1).jpeg" alt="Strandfontein High School Office Renovation — photo 11" loading="lazy"></button><button type="button" onclick="openLightbox(94)" aria-label="View Strandfontein High School Office Renovation photo 12"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.39.jpeg" alt="Strandfontein High School Office Renovation — photo 12" loading="lazy"></button><button type="button" onclick="openLightbox(95)" aria-label="View Strandfontein High School Office Renovation photo 13"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.40 (1).jpeg" alt="Strandfontein High School Office Renovation — photo 13" loading="lazy"></button><button type="button" onclick="openLightbox(96)" aria-label="View Strandfontein High School Office Renovation photo 14"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.40.jpeg" alt="Strandfontein High School Office Renovation — photo 14" loading="lazy"></button><button type="button" onclick="openLightbox(97)" aria-label="View Strandfontein High School Office Renovation photo 15"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.41 (1).jpeg" alt="Strandfontein High School Office Renovation — photo 15" loading="lazy"></button><button type="button" onclick="openLightbox(98)" aria-label="View Strandfontein High School Office Renovation photo 16"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.41.jpeg" alt="Strandfontein High School Office Renovation — photo 16" loading="lazy"></button><button type="button" onclick="openLightbox(99)" aria-label="View Strandfontein High School Office Renovation photo 17"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.42 (1).jpeg" alt="Strandfontein High School Office Renovation — photo 17" loading="lazy"></button><button type="button" onclick="openLightbox(100)" aria-label="View Strandfontein High School Office Renovation photo 18"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.42 (2).jpeg" alt="Strandfontein High School Office Renovation — photo 18" loading="lazy"></button><button type="button" onclick="openLightbox(101)" aria-label="View Strandfontein High School Office Renovation photo 19"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.42.jpeg" alt="Strandfontein High School Office Renovation — photo 19" loading="lazy"></button><button type="button" onclick="openLightbox(102)" aria-label="View Strandfontein High School Office Renovation photo 20"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.43 (1).jpeg" alt="Strandfontein High School Office Renovation — photo 20" loading="lazy"></button><button type="button" onclick="openLightbox(103)" aria-label="View Strandfontein High School Office Renovation photo 21"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.43 (2).jpeg" alt="Strandfontein High School Office Renovation — photo 21" loading="lazy"></button><button type="button" onclick="openLightbox(104)" aria-label="View Strandfontein High School Office Renovation photo 22"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.43.jpeg" alt="Strandfontein High School Office Renovation — photo 22" loading="lazy"></button><button type="button" onclick="openLightbox(105)" aria-label="View Strandfontein High School Office Renovation photo 23"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.44 (1).jpeg" alt="Strandfontein High School Office Renovation — photo 23" loading="lazy"></button><button type="button" onclick="openLightbox(106)" aria-label="View Strandfontein High School Office Renovation photo 24"><img src="Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.44.jpeg" alt="Strandfontein High School Office Renovation — photo 24" loading="lazy"></button></div></details>
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Tiling, Repairs and Installations</h3><p>A collection of interior improvement work, including tiling, repairs and household fixture and hardware installations, completed with care and attention to detail.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(107)" aria-label="View Tiling, Repairs and Installations photo"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.05.jpeg" alt="Tiling, Repairs and Installations" loading="lazy"></button>
+          <div class="project-card-count">15 photos</div>
+          <details class="new-project-photos"><summary>View all 15 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(108)" aria-label="View Tiling, Repairs and Installations photo 2"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.07.jpeg" alt="Tiling, Repairs and Installations — photo 2" loading="lazy"></button><button type="button" onclick="openLightbox(109)" aria-label="View Tiling, Repairs and Installations photo 3"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.08 (1).jpeg" alt="Tiling, Repairs and Installations — photo 3" loading="lazy"></button><button type="button" onclick="openLightbox(110)" aria-label="View Tiling, Repairs and Installations photo 4"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.08.jpeg" alt="Tiling, Repairs and Installations — photo 4" loading="lazy"></button><button type="button" onclick="openLightbox(111)" aria-label="View Tiling, Repairs and Installations photo 5"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.10.jpeg" alt="Tiling, Repairs and Installations — photo 5" loading="lazy"></button><button type="button" onclick="openLightbox(112)" aria-label="View Tiling, Repairs and Installations photo 6"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.11 (1).jpeg" alt="Tiling, Repairs and Installations — photo 6" loading="lazy"></button><button type="button" onclick="openLightbox(113)" aria-label="View Tiling, Repairs and Installations photo 7"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.11.jpeg" alt="Tiling, Repairs and Installations — photo 7" loading="lazy"></button><button type="button" onclick="openLightbox(114)" aria-label="View Tiling, Repairs and Installations photo 8"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.12 (1).jpeg" alt="Tiling, Repairs and Installations — photo 8" loading="lazy"></button><button type="button" onclick="openLightbox(115)" aria-label="View Tiling, Repairs and Installations photo 9"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.12.jpeg" alt="Tiling, Repairs and Installations — photo 9" loading="lazy"></button><button type="button" onclick="openLightbox(116)" aria-label="View Tiling, Repairs and Installations photo 10"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.13.jpeg" alt="Tiling, Repairs and Installations — photo 10" loading="lazy"></button><button type="button" onclick="openLightbox(117)" aria-label="View Tiling, Repairs and Installations photo 11"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.14 (1).jpeg" alt="Tiling, Repairs and Installations — photo 11" loading="lazy"></button><button type="button" onclick="openLightbox(118)" aria-label="View Tiling, Repairs and Installations photo 12"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.14 (2).jpeg" alt="Tiling, Repairs and Installations — photo 12" loading="lazy"></button><button type="button" onclick="openLightbox(119)" aria-label="View Tiling, Repairs and Installations photo 13"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.14.jpeg" alt="Tiling, Repairs and Installations — photo 13" loading="lazy"></button><button type="button" onclick="openLightbox(120)" aria-label="View Tiling, Repairs and Installations photo 14"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.15 (1).jpeg" alt="Tiling, Repairs and Installations — photo 14" loading="lazy"></button><button type="button" onclick="openLightbox(121)" aria-label="View Tiling, Repairs and Installations photo 15"><img src="tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.15.jpeg" alt="Tiling, Repairs and Installations — photo 15" loading="lazy"></button></div></details>
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Toilet Vinyl Flooring</h3><p>Patterned vinyl flooring gives this toilet a fresh look, adding visual interest with a practical finish for everyday use.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(122)" aria-label="View Toilet Vinyl Flooring photo"><img src="toilet floor vinyl/WhatsApp Image 2026-10-01 at 08.15.35.jpeg" alt="Toilet Vinyl Flooring" loading="lazy"></button>
+          <div class="project-card-count">2 photos</div>
+          <details class="new-project-photos"><summary>View all 2 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(123)" aria-label="View Toilet Vinyl Flooring photo 2"><img src="toilet floor vinyl/WhatsApp Image 2026-10-01 at 08.15.36.jpeg" alt="Toilet Vinyl Flooring — photo 2" loading="lazy"></button></div></details>
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Custom Floating TV Unit with Backlighting</h3><p>Designed and built from scratch, this custom TV unit combines a floating cabinet, open shelving and a feature wall panel. Grimm installed the complete unit and added subtle backlighting to create a warm focal point.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(124)" aria-label="View Custom Floating TV Unit with Backlighting photo"><img src="tv unit/WhatsApp Image 2026-10-01 at 08.14.11.jpeg" alt="Custom Floating TV Unit with Backlighting" loading="lazy"></button>
+          <div class="project-card-count">1 photo</div>
+          
+        </article>
+        <article class="new-project-card">
+          <div class="project-card-head"><div><h3>Sunroom Roof Installation and Waterproofing</h3><p>Grimm installed a new roof for this sunroom and waterproofed key joins and edges to help protect the space from the elements.</p></div><span class="reaper-badge" aria-hidden="true" title="Grimm">💀</span></div>
+          <button type="button" class="project-cover" onclick="openLightbox(125)" aria-label="View Sunroom Roof Installation and Waterproofing photo"><img src="sunroom roof/WhatsApp Image 2026-10-01 at 08.11.29 (1).jpeg" alt="Sunroom Roof Installation and Waterproofing" loading="lazy"></button>
+          <div class="project-card-count">6 photos</div>
+          <details class="new-project-photos"><summary>View all 6 photos</summary><div class="project-photo-grid"><button type="button" onclick="openLightbox(126)" aria-label="View Sunroom Roof Installation and Waterproofing photo 2"><img src="sunroom roof/WhatsApp Image 2026-10-01 at 08.11.29.jpeg" alt="Sunroom Roof Installation and Waterproofing — photo 2" loading="lazy"></button><button type="button" onclick="openLightbox(127)" aria-label="View Sunroom Roof Installation and Waterproofing photo 3"><img src="sunroom roof/WhatsApp Image 2026-10-01 at 08.11.30 (1).jpeg" alt="Sunroom Roof Installation and Waterproofing — photo 3" loading="lazy"></button><button type="button" onclick="openLightbox(128)" aria-label="View Sunroom Roof Installation and Waterproofing photo 4"><img src="sunroom roof/WhatsApp Image 2026-10-01 at 08.11.30.jpeg" alt="Sunroom Roof Installation and Waterproofing — photo 4" loading="lazy"></button><button type="button" onclick="openLightbox(129)" aria-label="View Sunroom Roof Installation and Waterproofing photo 5"><img src="sunroom roof/WhatsApp Image 2026-10-01 at 08.11.31 (1).jpeg" alt="Sunroom Roof Installation and Waterproofing — photo 5" loading="lazy"></button><button type="button" onclick="openLightbox(130)" aria-label="View Sunroom Roof Installation and Waterproofing photo 6"><img src="sunroom roof/WhatsApp Image 2026-10-01 at 08.11.31.jpeg" alt="Sunroom Roof Installation and Waterproofing — photo 6" loading="lazy"></button></div></details>
+        </article>
+      </div>
+    </div></section>
+    <section id="about"><div class="wrap about-grid">
+      <figure class="about-photo"><img src="assets/calvin-duarte.jpg" alt="Calvin Duarte, owner and operator of GRIMM" loading="lazy"><figcaption>Calvin Duarte <span>Owner / Operator</span></figcaption></figure>
+      <div class="about-copy"><p class="eyebrow">About GRIMM</p><h2>Good work starts with good people.</h2><p>GRIMM is a Cape Town contracting business led by Calvin Duarte. With more than 20 years of experience, Calvin brings a hands-on approach to renovation, maintenance, and project coordination.</p><p>We believe in doing the job with care, keeping communication straightforward, and leaving you with results you can feel good about.</p><p class="signature">Calvin Duarte</p><p class="role">Owner / Operator</p></div>
+    </div></section>
+    <section class="contact" id="contact"><div class="wrap contact-grid">
+      <div><p class="eyebrow">Let's talk</p><h2>Have a project<br>in mind?</h2><p class="muted">Share a few details and Calvin will be in touch to discuss your project.</p>
+        <div class="contact-info">
+          <div class="contact-item"><span class="contact-icon" aria-hidden="true">✉</span><div><small>Email</small><a href="mailto:grimmprojectsco@gmail.com">grimmprojectsco@gmail.com</a></div></div>
+          <div class="contact-item"><span class="contact-icon" aria-hidden="true">☎</span><div><small>Call</small><a href="tel:+27670075268">067 007 5268</a></div></div>
+          <div class="contact-item"><span class="contact-icon" aria-hidden="true">⌖</span><div><small>Based in</small><span>Cape Town, South Africa</span></div></div>
+        </div>
+      </div>
+      <div class="contact-box"><h3>Start with a message.</h3><p>Complete the details below. Your email app will open a draft for you to review and send.</p>
+        <form class="enquiry-form" id="enquiry-form">
+          <div class="form-row">
+            <label>Name<input name="Client name" type="text" autocomplete="name" required></label>
+            <label>Email<input name="Email" type="email" autocomplete="email" required></label>
+          </div>
+          <div class="form-row">
+            <label>Phone<input name="Phone" type="tel" autocomplete="tel"></label>
+            <label>Property location<input name="Property location" type="text" autocomplete="address-level2"></label>
+          </div>
+          <fieldset>
+            <legend class="services-label">Services needed</legend>
+            <div class="service-options">
+              <label class="service-option"><input name="Services" value="General renovation" type="checkbox"> General renovation</label>
+              <label class="service-option"><input name="Services" value="Project upgrades" type="checkbox"> Project upgrades</label>
+              <label class="service-option"><input name="Services" value="Property maintenance" type="checkbox"> Property maintenance</label>
+              <label class="service-option"><input name="Services" value="Project management" type="checkbox"> Project management</label>
+            </div>
+          </fieldset>
+          <label>Project description<textarea name="Project description" required></textarea></label>
+          <button class="button" type="submit">Open email draft</button>
+          <p class="form-status" id="form-status" role="status">Your email app could not be opened. Please email <a href="mailto:grimmprojectsco@gmail.com">grimmprojectsco@gmail.com</a> directly.</p>
+        </form>
+      </div>
+    </div></section>
+  </main>
+  <footer><div class="wrap footer-inner"><span>© <span id="year">2026</span> GRIMM Contracting · Cape Town</span><span>Quality work · Lasting results</span></div></footer>
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Project photo viewer">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close photo viewer">&times;</button>
+    <div class="lightbox-content"><img id="lightbox-image" src="" alt="Project photograph"></div>
+    <button class="lightbox-nav lightbox-prev" onclick="previousImage()" aria-label="Previous photo">&#10094;</button>
+    <button class="lightbox-nav lightbox-next" onclick="nextImage()" aria-label="Next photo">&#10095;</button>
+  </div>
+  <script>
+    const galleryImages = [
+      'assets/ceiling beams.jpeg',
+      'assets/fireplace.jpeg',
+      'assets/handbasin installation.jpeg',
+      'assets/new tech drywall.jpeg',
+      'assets/partition.jpeg',
+      'assets/reception window.jpeg',
+      'assets/tiling.jpeg',
+      'assets/tv unit.jpeg',
+      'Banister rail/WhatsApp Image 2026-10-01 at 08.03.36.jpeg',
+      'Banister rail/WhatsApp Image 2026-10-01 at 08.03.37.jpeg',
+      'ceiling installation/WhatsApp Image 2026-10-01 at 08.25.20.jpeg',
+      'ceiling installation/WhatsApp Image 2026-10-01 at 08.25.21 (1).jpeg',
+      'ceiling installation/WhatsApp Image 2026-10-01 at 08.25.21 (2).jpeg',
+      'ceiling installation/WhatsApp Image 2026-10-01 at 08.25.21.jpeg',
+      'kitchen tiling/WhatsApp Image 2026-10-01 at 08.16.59.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.53.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.54 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.54.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.55 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.55.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.57.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.58 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.29.58.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.00.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.02 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.02 (2).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.02.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.03 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.03 (2).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.03.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.04 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.04.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.05.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.06.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.07.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.08.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.09 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.09.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.10 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.10.jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.11 (1).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.11 (2).jpeg',
+      'newtech house, etc/WhatsApp Image 2026-10-01 at 08.30.11.jpeg',
+      'reception/WhatsApp Image 2026-10-01 at 08.12.39.jpeg',
+      'reception/WhatsApp Image 2026-10-01 at 08.12.40 (1).jpeg',
+      'reception/WhatsApp Image 2026-10-01 at 08.12.40.jpeg',
+      'reception/WhatsApp Image 2026-10-01 at 08.12.41 (1).jpeg',
+      'reception/WhatsApp Image 2026-10-01 at 08.12.41 (2).jpeg',
+      'reception/WhatsApp Image 2026-10-01 at 08.12.41.jpeg',
+      'reception/WhatsApp Image 2026-10-01 at 08.12.42.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.08.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.09 (1).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.09 (2).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.09 (3).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.09.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.10 (1).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.10 (2).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.10 (3).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.10.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.11 (1).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.11 (2).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.11.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.12 (1).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.12 (2).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.12 (3).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.12.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.13 (1).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.13 (2).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.13 (3).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.13.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.14 (1).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.14 (2).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.14 (3).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.14.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.15 (1).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.15 (2).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.15 (3).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.15.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.16.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.54 (1).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.54 (2).jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.54.jpeg',
+      'roof clean,waterproofing/WhatsApp Image 2026-10-01 at 09.01.55.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.28 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.28.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.30.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.31.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.32 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.32.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.33.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.34.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.35 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.35.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.39 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.39.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.40 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.40.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.41 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.41.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.42 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.42 (2).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.42.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.43 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.43 (2).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.43.jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.44 (1).jpeg',
+      'Strandfontein high school/WhatsApp Image 2026-10-01 at 08.01.44.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.05.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.07.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.08 (1).jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.08.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.10.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.11 (1).jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.11.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.12 (1).jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.12.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.13.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.14 (1).jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.14 (2).jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.14.jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.15 (1).jpeg',
+      'tiling,repairs, installations/WhatsApp Image 2026-10-01 at 08.24.15.jpeg',
+      'toilet floor vinyl/WhatsApp Image 2026-10-01 at 08.15.35.jpeg',
+      'toilet floor vinyl/WhatsApp Image 2026-10-01 at 08.15.36.jpeg',
+      'tv unit/WhatsApp Image 2026-10-01 at 08.14.11.jpeg',
+      'sunroom roof/WhatsApp Image 2026-10-01 at 08.11.29 (1).jpeg',
+      'sunroom roof/WhatsApp Image 2026-10-01 at 08.11.29.jpeg',
+      'sunroom roof/WhatsApp Image 2026-10-01 at 08.11.30 (1).jpeg',
+      'sunroom roof/WhatsApp Image 2026-10-01 at 08.11.30.jpeg',
+      'sunroom roof/WhatsApp Image 2026-10-01 at 08.11.31 (1).jpeg',
+      'sunroom roof/WhatsApp Image 2026-10-01 at 08.11.31.jpeg'
+    ];
+    let currentImageIndex = 0;
+    function openLightbox(index) {
+      currentImageIndex = index;
+      document.getElementById('lightbox-image').src = galleryImages[index];
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
+    }
+    function previousImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      document.getElementById('lightbox-image').src = galleryImages[currentImageIndex];
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('enquiry-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const clientName = formData.get('Client name').trim();
+      const details = [];
+      for (const [field, value] of formData.entries()) {
+        if (field === 'Client name' || !value.trim()) continue;
+        if (field === 'Services') {
+          const existingServices = details.find(detail => detail.startsWith('Services:'));
+          if (existingServices) {
+            details[details.indexOf(existingServices)] += `, ${value.trim()}`;
+          } else {
+            details.push(`Services: ${value.trim()}`);
+          }
+        } else {
+          details.push(`${field}:\n${value.trim()}`);
+        }
+      }
+      const subject = `New Project Enquiry – ${clientName}`;
+      const mailto = `mailto:grimmprojectsco@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Client name: ${clientName}\n\n${details.join('\n\n')}`)}`;
+      const status = document.getElementById('form-status');
+      status.classList.remove('visible');
+      let emailAppOpened = false;
+      window.addEventListener('blur', () => { emailAppOpened = true; }, { once:true });
+      window.location.href = mailto;
+      window.setTimeout(() => {
+        if (!emailAppOpened) status.classList.add('visible');
+      }, 1200);
+    });
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') previousImage();
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
